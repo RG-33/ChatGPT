@@ -7,11 +7,11 @@ Open this folder as a trusted project in Codex and start a task in it. From a te
 
 This is project-scoped configuration. It does not retroactively change an existing task in another directory, and it is not a global installation. GeorgFit remains separate and paused.
 
-Root and reviewer: GPT-6 Astra, low reasoning. Explorer, researcher, worker and tester: GPT-5.6 Luna, medium reasoning. Skill: `.agents/skills/astra-orchestrator/SKILL.md`. Role profiles: `.codex/agents/`.
+Root and reviewer: GPT-6 Astra, medium reasoning. Explorer, researcher, worker and tester: GPT-5.6 Luna, medium reasoning. Skill: `.agents/skills/astra-orchestrator/SKILL.md`. Role profiles: `.codex/agents/`.
 
 ## Verification (2026-09-09)
 - Codex CLI 0.153.4 accepted the project with `--strict-config`.
-- Root smoke test reported Astra / low and returned `CONFIG_OK`.
+- Initial root smoke test (before the medium-reasoning preference update) reported Astra / low and returned `CONFIG_OK`.
 - Read-only explorer delegation test returned `DELEGATION_OK` after requesting a Luna subagent response.
 - Independent Luna inspection found all five profile models consistent with the skill.
 - These are configuration and basic delegation tests, not benchmarks of scientific reasoning or every role's tools.
@@ -33,3 +33,5 @@ The two existing Untitled JPG files were left untouched and were not included in
 ## PR integration verification
 
 Six standard-library tests pass (the five PR #7 regressions plus generic future-role passthrough). The real patched Windows installer passed Pro and Plus installs into temporary projects, preserved an unrelated sentinel file, and installed all five profiles and the PR #6 skill. PowerShell syntax and Git whitespace checks passed. An independent Luna review found no production regression in PR #7. Tests used synthetic logs, not private session history.
+
+Current active project settings: Astra root/reviewer medium; Luna execution roles medium; maximum concurrent subagent threads 4. The optional Plus template remains a separate upstream alternative, not the active configuration.
