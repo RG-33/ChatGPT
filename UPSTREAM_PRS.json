@@ -1,0 +1,9 @@
+{
+  "base": "f1de1b8729c8ccfb7978321b4764c58bd34c8493",
+  "applied": {
+    "4": "8ac5c1d25788d8e334f7dfdeb2d160f5c0035b58",
+    "6": "9b7d87e599162e91284d2bbb0fc803265087e521",
+    "7": "1e954c58a3d98098caea0abafa4195973a1fb2a0"
+  },
+  "note": "PR4 one-line fix ported onto latest installer; PR6 and PR7 changed files copied from pinned heads. Application does not mean upstream merge."
+}

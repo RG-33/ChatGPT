@@ -17,9 +17,19 @@ Root and reviewer: GPT-6 Astra, low reasoning. Explorer, researcher, worker and 
 - These are configuration and basic delegation tests, not benchmarks of scientific reasoning or every role's tools.
 
 ## Upstream PRs
-Merged PRs #1-#3 are in the pinned main version. PRs #4, #6, #7 were open at verification time and are not installed as branches here. The original PR #6 link is retained in AGENTS.md for tracking; a link does not install its changes.
+Merged PRs #1-#3 are in the pinned base. User-requested PRs **#4, #6 and #7 are now applied** (2026-09-09); exact revisions are in `UPSTREAM_PRS.json`. They may remain open upstream.
+
+- #4: safe PowerShell component prompt, ported onto the current Pro/Plus installer.
+- #6: root-only / lightweight / full orchestration routing in the skill and AGENTS.md.
+- #7: token reports accept string subagent sources; regression tests use synthetic logs.
+
+Token tool: `python scripts/token_usage.py --help`. Tests: `python -m unittest discover -s tests -v`. Use the tool locally; do not commit private session reports. The installer scripts target another existing project; use Start-Orchestrator.ps1 to launch this installed project.
 
 Update by reviewing upstream diffs before replacing these files. Preserve local instructions, permissions and unrelated settings. Do not overwrite a global Codex configuration with this project's template.
 
 ## Local-only files
 The two existing Untitled JPG files were left untouched and were not included in the installation commit. Credentials and the machine's global Codex configuration are not part of this repository.
+
+## PR integration verification
+
+Six standard-library tests pass (the five PR #7 regressions plus generic future-role passthrough). The real patched Windows installer passed Pro and Plus installs into temporary projects, preserved an unrelated sentinel file, and installed all five profiles and the PR #6 skill. PowerShell syntax and Git whitespace checks passed. An independent Luna review found no production regression in PR #7. Tests used synthetic logs, not private session history.
